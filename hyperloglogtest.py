@@ -11,7 +11,7 @@ print(len(element_list))
 hyperloglog = HyperLogLog(number_registers=16)
 for i in range(len(element_list)):
     if i % int(10e4) == 0:
-        print(i)
+        print(i, i/number_elements)
     hyperloglog.add(element_list[i])
 
 estimated_count = hyperloglog.count()
